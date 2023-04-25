@@ -29,7 +29,7 @@ const query = new GraphQLObjectType({
         id: { type: new GraphQLNonNull(GraphQLString) },
       },
       resolve(parentValue, args) {
-        return axios.get(`http://localhost:3000/customers/${+args.id}`)
+        return axios.get(`http://localhost:3000/customers/${args.id}`)
         .then(res => res.data);
       },
     },
